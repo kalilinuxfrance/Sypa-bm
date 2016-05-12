@@ -25,7 +25,7 @@ if [ "$var1" = "$var2" ]; then
 	echo "ETAT                :      Identique" 
 	echo ""
 # Comment the next line if you do not use graphical server
-	notify-send -t 5000 "Sypa-bm.sh: Adresse IP Publique inchangee"
+	notify-send -t 5000 "Sypa-bm.sh: Routine"
 
 else
 
@@ -33,7 +33,7 @@ else
 	GET 192.168.1.1 | sed -nre 's/^.* (([0-9]{1,3}\.){3}[0-9]{1,3}).*$/\1/p' > ReferenceIP.txt
 	echo "Mise a jour de l adresse ip de reference" 
 # Comment the next line if you do not use graphical server
-	notify-send -t 5000 "Sypa-bm.sh: Attention changement d adresse IP Publique "
+	notify-send -t 5000 "Sypa-bm.sh:  ${var2} "
 	
 # Put your mail adress into the next line
 	echo "Nouvelle adresse IP: http://$var2" | mail -s "Nouvelle IP" Your-Mail@gmail.com
