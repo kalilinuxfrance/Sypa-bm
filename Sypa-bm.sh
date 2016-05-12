@@ -7,7 +7,7 @@
 #                          05-2016   #
 ######################################
 
-# IMPORTANT: You need to have exim4 configurated on your computer where the script runs.
+# IMPORTANT: You need to have exim4 configurated on the computer where the script runs.
 
 # Change the 192.168.1.1 by any website who can provide your IP if this IP adress fail. 
 GET 192.168.1.1 | sed -nre 's/^.* (([0-9]{1,3}\.){3}[0-9]{1,3}).*$/\1/p' > IP.txt
