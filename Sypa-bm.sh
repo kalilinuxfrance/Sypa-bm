@@ -9,7 +9,10 @@
 
 # IMPORTANT: You need to have exim4 configured on the computer where the script runs.
 
-# Change the 192.168.1.1 by any website who can provide your IP if this IP adress fail. 
+# Change the 192.168.1.1 by any website who can provide your IP if this IP address fail. 
+# The goal is to write your IP inside the file IP.txt. you can use any command to do the job!
+# For example: wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//' > IP.txt
+
 GET 192.168.1.1 | sed -nre 's/^.* (([0-9]{1,3}\.){3}[0-9]{1,3}).*$/\1/p' > IP.txt
 
 var1=$(grep . -1 ReferenceIP.txt)
@@ -39,5 +42,3 @@ else
 	echo "Nouvelle adresse IP: http://$var2" | mail -s "Nouvelle IP" Your-Mail@gmail.com
 	sleep 2
 fi
-
-
